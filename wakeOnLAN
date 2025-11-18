@@ -1,0 +1,4 @@
+# Script to connect to a remote server and use WakeOnLAN to wake up another server
+@echo off
+ssh -p 222 joanna@siwy.duckdns.org wakeonlan 6c:0b:84:0c:fc:0a
+pause
