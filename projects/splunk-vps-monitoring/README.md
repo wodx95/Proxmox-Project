@@ -27,3 +27,9 @@ I installed Splunk Universal Forwarder on the Ubuntu VPS to collect and forward 
 To keep the public server isolated from the internal lab, a dedicated WireGuard tunnel was configured between the VPS and pfSense. Firewall rules allow the VPS to communicate only with the Splunk receiver on TCP port 9997.
 
 After configuring the forwarder, I verified the connection to the Splunk Server and confirmed that authentication logs from the VPS were successfully being received and indexed in Splunk.
+
+## Documentation
+
+The full step-by-step documentation of the VPS integration with Splunk, including SSH key configuration, Splunk Universal Forwarder setup, WireGuard connectivity, pfSense firewall configuration and log forwarding verification, is available below:
+
+📄 [VPS into Splunk – Full Documentation](./VPS%20into%20Splunk.pdf)
