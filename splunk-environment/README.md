@@ -6,4 +6,6 @@ The environment includes Splunk Enterprise, Splunk Enterprise Security, Universa
 
 ## Documentation
 
-Full step-by-step documentation will be added below.
+Full step-by-step documentation of the Splunk environment setup is available below:
+
+📄 [Splunk Environment Setup – Full Documentation](./Splunk%20Environment%20Setup.pdf)
