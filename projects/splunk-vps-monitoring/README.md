@@ -19,3 +19,11 @@ A Splunk Universal Forwarder installed on the VPS collects security logs and for
 **Data flow:**
 
 Public VPS → Splunk Universal Forwarder → WireGuard VPN → pfSense → Splunk Enterprise
+
+## Splunk Integration
+
+I installed Splunk Universal Forwarder on the Ubuntu VPS to collect and forward security-relevant logs to my Splunk environment.
+
+To keep the public server isolated from the internal lab, a dedicated WireGuard tunnel was configured between the VPS and pfSense. Firewall rules allow the VPS to communicate only with the Splunk receiver on TCP port 9997.
+
+After configuring the forwarder, I verified the connection to the Splunk Server and confirmed that authentication logs from the VPS were successfully being received and indexed in Splunk.
