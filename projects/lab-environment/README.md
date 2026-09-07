@@ -12,4 +12,10 @@ Some parts of the underlying infrastructure and remote access configuration were
 
 Full step-by-step documentation of the lab environment setup is available below:
 
-📄 [VM Lab Environment Setup – Full Documentation](./VM%20Lab%20Environment%20Setup.pdf)
+ [VM Lab Environment Setup – Full Documentation](./VM%20Lab%20Environment%20Setup.pdf)
+
+## Current Lab Topology
+
+The diagram below shows the current lab architecture. The environment has continued to develop since the original setup documentation was created, including the integration of a public-facing VPS used for security monitoring.
+
+![Current Lab Topology](./lab-topology.png)
