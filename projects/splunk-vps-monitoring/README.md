@@ -30,6 +30,26 @@ After configuring the forwarder, I verified the connection to the Splunk Server 
 
 ## Documentation
 
-The full step-by-step documentation of the VPS integration with Splunk, including SSH key configuration, Splunk Universal Forwarder setup, WireGuard connectivity, pfSense firewall configuration and log forwarding verification, is available below:
+### VPS Integration
 
-📄 [VPS into Splunk – Full Documentation](./VPS%20into%20Splunk.pdf)
+Full step-by-step documentation covering the integration of the public VPS with Splunk, including SSH key configuration, Splunk Universal Forwarder setup, WireGuard connectivity, pfSense firewall configuration and log forwarding verification:
+
+ [VPS into Splunk – Full Documentation](./VPS%20into%20Splunk.pdf)
+
+### SSH Security Investigation
+
+Full investigation of real-world SSH activity observed on the public-facing VPS, including brute-force activity, targeted usernames, source IP analysis, geographic distribution, SSH hardening and post-hardening comparison:
+
+ [Splunk – Investigating VPS SSH Connections](./Splunk-%20Investigating%20VPS%20SSH%20connections.pdf)
+
+### SPL Quick Reference
+
+The main SPL searches used throughout the SSH investigation, collected in one place for quick reference:
+
+ [Splunk SSH Investigation – Quick Reference](./splunk-searches.md)
+
+### SSH Hardening Script
+
+A reusable Bash script based on the SSH hardening process performed during the investigation. The script disables password-based SSH authentication and includes additional backup and configuration validation checks for safer reuse:
+
+ [SSH Password Authentication Hardening Script](./disable-ssh-password-auth.sh)
