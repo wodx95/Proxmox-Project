@@ -64,7 +64,22 @@ The project is now being expanded to monitor additional network and application 
 - Virtualisation
 - Offensive and defensive security
 
-## Project Documentation
+## Projects
 
-Detailed documentation, screenshots and investigation results for individual projects will be added to this repository as the lab continues to develop.
-  
+###  Lab Environment Setup
+
+Setup of the virtualised cybersecurity lab, including Proxmox networking, isolated lab infrastructure, virtual machines and connectivity testing.
+
+ [View Lab Environment Project](./projects/lab-environment/)
+
+###  Splunk Environment Setup
+
+Deployment of the central Splunk SIEM environment, including Splunk Enterprise, Enterprise Security, Universal Forwarders and Windows/Linux log collection.
+
+ [View Splunk Environment Project](./projects/splunk-environment/)
+
+###  Splunk VPS Security Monitoring
+
+Integration and monitoring of a public-facing VPS, including real-world SSH brute-force investigation, Splunk dashboards, SSH hardening, post-hardening analysis, SPL searches and a reusable hardening script.
+
+ [View VPS Security Monitoring Project](./projects/splunk-vps-monitoring/)
