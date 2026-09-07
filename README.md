@@ -83,3 +83,10 @@ Deployment of the central Splunk SIEM environment, including Splunk Enterprise, 
 Integration and monitoring of a public-facing VPS, including real-world SSH brute-force investigation, Splunk dashboards, SSH hardening, post-hardening analysis, SPL searches and a reusable hardening script.
 
  [View VPS Security Monitoring Project](./projects/splunk-vps-monitoring/)
+
+
+## Collaboration
+
+The underlying home lab infrastructure was built collaboratively with [@SiwySec](https://github.com/SiwySec).
+
+The security projects, Splunk investigations and documentation presented in this repository represent my own work within the shared lab environment.
