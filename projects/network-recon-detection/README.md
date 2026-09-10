@@ -36,3 +36,9 @@ index=main host="ubuntu-client" "UFW BLOCK" "PROTO=TCP"
 - SPL
 - Behaviour-based detection
 - Alert creation and testing
+
+## Documentation
+
+Full step-by-step documentation of the reconnaissance, Splunk investigation, UFW logging, detection creation and automated alert testing:
+
+[Network Reconnaissance and Detection – Full Documentation](./Network-Reconnaissance-and-Detection.pdf)
