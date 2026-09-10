@@ -84,6 +84,11 @@ Integration and monitoring of a public-facing VPS, including real-world SSH brut
 
  [View VPS Security Monitoring Project](./projects/splunk-vps-monitoring/)
 
+###  Network Reconnaissance and Detection
+
+Nmap reconnaissance, UFW firewall logging, Splunk analysis, behavioural port scan detection and automated alerting.
+
+ [Network Reconnaissance and Detection](./projects/network-recon-detection/)
 
 ## Collaboration
 
