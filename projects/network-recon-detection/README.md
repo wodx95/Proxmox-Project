@@ -42,3 +42,9 @@ index=main host="ubuntu-client" "UFW BLOCK" "PROTO=TCP"
 Full step-by-step documentation of the reconnaissance, Splunk investigation, UFW logging, detection creation and automated alert testing:
 
 [Network Reconnaissance and Detection – Full Documentation](./Network-Reconnaissance-and-Detection.pdf)
+
+### Splunk Detection
+
+The SPL search and alert configuration used to detect potential port scanning activity:
+
+[Splunk Port Scan Detection](./splunk-detection.md)
