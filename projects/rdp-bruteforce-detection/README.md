@@ -49,3 +49,9 @@ Full step-by-step documentation of the RDP authentication attack, Windows Securi
 The SPL search and alert configuration used to detect repeated failed RDP authentication attempts:
 
 [Splunk RDP Brute Force Detection](./splunk-detection.md)
+
+### Hydra
+
+Quick reference for creating a custom password list and using Hydra with either a custom wordlist or RockYou:
+
+[Hydra – Quick Reference](./hydra-notes.md)
