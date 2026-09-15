@@ -90,6 +90,12 @@ Nmap reconnaissance, UFW firewall logging, Splunk analysis, behavioural port sca
 
  [Network Reconnaissance and Detection](./projects/network-recon-detection/)
 
+### RDP Brute Force Detection
+
+Controlled RDP password-guessing simulation against Windows Server 2022, Windows Event ID 4625 analysis, Splunk behavioural detection and automated High-severity alerting.
+
+[View RDP Brute Force Detection Project](./projects/rdp-bruteforce-detection/)
+
 ## Collaboration
 
 The underlying home lab infrastructure was built collaboratively with [@SiwySec](https://github.com/SiwySec).
