@@ -1,0 +1,6 @@
+index=main host="Win-Serv-22" EventCode=1
+Image="*powershell.exe"
+NOT Image="*SplunkUniversalForwarder*"
+(CommandLine="*-EncodedCommand*" OR CommandLine="*-enc *" OR CommandLine="*-enco *")
+| table _time User Image CommandLine ParentImage
+| sort - _time
