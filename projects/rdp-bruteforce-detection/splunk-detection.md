@@ -1,5 +1,7 @@
 # Splunk RDP Brute Force Detection
 
+**MITRE ATT&CK:** T1110.001 – Brute Force: Password Guessing
+
 ## Purpose
 
 Detect repeated failed Windows authentication attempts that may indicate an RDP brute-force or password-guessing attack.

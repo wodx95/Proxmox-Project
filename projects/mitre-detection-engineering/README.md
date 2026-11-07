@@ -81,9 +81,11 @@ This is a behavioural detection rather than proof of malicious activity. Legitim
 | ATT&CK Technique | Detection | Telemetry | Status |
 |---|---|---|---|
 | T1059.001 | PowerShell Encoded Command | Sysmon Event ID 1 | **Completed & validated** |
+| T1110.001 | RDP Brute Force – Multiple Failed Logons | Windows Security Event ID 4625 | Existing lab detection ([project](../rdp-bruteforce-detection/)) |
+| T1046 | Potential Port Scan | UFW firewall logs | Existing lab detection ([project](../network-recon-detection/)) |
+| T1110.001 | SSH Password Guessing (real-world activity) | Linux `auth.log` | Investigated ([project](../splunk-vps-monitoring/)) |
 | T1547.001 | Registry Run Keys / Startup Folder | Sysmon Registry Events | Planned |
 | T1003.001 | LSASS Memory | Sysmon Event ID 10 | Planned |
-| T1021.001 | Remote Desktop Protocol | Windows Security Events | Existing lab detection |
 
 ## Repository Structure
 

@@ -2,9 +2,11 @@
 
 This project demonstrates the detection of network reconnaissance activity within my Proxmox lab using Nmap, UFW firewall logging and Splunk.
 
+**MITRE ATT&CK:** T1046 – Network Service Discovery
+
 ## Scenario
 
-A Kali Linux VM was used to perform network reconnaissance against an Ubuntu endpoint. The activity was then investigated using logs collected by Splunk.
+A Kali Linux VM (`192.168.50.100`) was used to perform host discovery across the lab subnet, followed by an Nmap SYN and service enumeration scan against an Ubuntu endpoint (`192.168.50.30`). The scan identified OpenSSH running on TCP port 222. The activity was then investigated using logs collected by Splunk.
 
 The initial authentication logs provided evidence of interaction with the SSH service, but did not provide visibility of the complete port scan. To improve network visibility, UFW firewall logging was enabled on the Ubuntu endpoint.
 
@@ -28,6 +30,19 @@ index=main host="ubuntu-client" "UFW BLOCK" "PROTO=TCP"
 | where unique_ports >= 5
 | sort - _time
 ```
+## Results
+
+- Authentication logs alone showed only a single SSH connection from the Kali VM during service enumeration.
+- After enabling UFW logging, Splunk recorded blocked TCP SYN packets from `192.168.50.100` to 10 different destination ports (including 21, 80, 110, 143 and 443) within the same minute.
+- The scheduled alert **Potential Port Scan Detected** triggered automatically when the scan was repeated.
+
+## Limitations
+
+- UFW recorded only a subset of the 1,000 ports scanned by Nmap, so the event count understates the real scan.
+- `bin _time span=1m` uses fixed one-minute buckets. A scan split across a minute boundary could fall below the threshold in both buckets; a sliding window (for example `streamstats` with `time_window`) would be more robust.
+- The threshold of five unique ports was chosen for the lab and would need tuning against normal traffic in production.
+- Slow or distributed scans from multiple source IPs would not be detected by this rule.
+
 ## Skills Practised
 
 - Network reconnaissance with Nmap

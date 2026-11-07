@@ -28,6 +28,31 @@ To keep the public server isolated from the internal lab, a dedicated WireGuard 
 
 After configuring the forwarder, I verified the connection to the Splunk Server and confirmed that authentication logs from the VPS were successfully being received and indexed in Splunk.
 
+Only `/var/log/auth.log` is forwarded. High-volume gameplay logs were deliberately excluded so that the data stays focused on security-relevant events such as SSH authentication, invalid users and privileged activity.
+
+## Key Findings
+
+**MITRE ATT&CK:** T1110.001 – Brute Force: Password Guessing (attacker activity observed)
+
+| Phase | Result |
+|---|---|
+| Before hardening (48 hours, 1–3 Sep 2026) | ~7,300 failed SSH password attempts from 66 unique source IPs |
+| Most targeted account | `root` (over 3,600 attempts), followed by `admin`, `ubuntu` and `user` |
+| Peak activity | Several spikes of over 500 failed attempts in a single hour |
+| Successful logins | 12, all from two known administrator IPs – no successful logins from attacking IPs |
+| After disabling password authentication | 0 new `Failed password` events |
+| Continued scanning after hardening | 4,140 invalid-user and pre-authentication events |
+
+The comparison shows that disabling password authentication removed the password-guessing attack surface, but did not stop automated bots from scanning the exposed SSH service.
+
+## Splunk Dashboard
+
+The findings were combined into a dedicated **VPS SSH Security Investigation** dashboard.
+
+![VPS SSH dashboard – failed attempts, targeted usernames and top source IPs](./images/vps-ssh-dashboard-overview.png)
+
+![VPS SSH dashboard – failed attempts over time and geographic distribution](./images/vps-ssh-dashboard-timeline-geo.png)
+
 ## Documentation
 
 ### VPS Integration

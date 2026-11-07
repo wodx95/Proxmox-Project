@@ -2,9 +2,11 @@
 
 This project demonstrates the detection of an RDP brute-force attack against a Windows Server 2022 system using Windows Security telemetry and Splunk Enterprise.
 
+**MITRE ATT&CK:** T1110.001 – Brute Force: Password Guessing
+
 ## Scenario
 
-A Kali Linux VM was used to perform controlled RDP authentication attempts against a dedicated `testuser` account on Windows Server 2022.
+A Kali Linux VM was used to perform controlled RDP authentication attempts against a dedicated, non-administrative `testuser` account on Windows Server 2022 (`192.168.50.40`). A targeted Nmap scan first confirmed that SMB (445) and RDP (3389) were reachable.
 
 THC Hydra was then used with a small custom password list to generate multiple failed authentication attempts. Windows Security logs were collected using the Splunk Universal Forwarder and analysed in Splunk Enterprise.
 
@@ -26,6 +28,12 @@ index=main host="Win-Serv-22" EventCode=4625
 | stats count by Source_Network_Address Account_Name
 | where count >= 5
 ```
+
+## Limitations
+
+- Event ID 4625 records failed logons from any source, not only RDP. With Network Level Authentication (NLA), failed RDP logons are usually recorded as **Logon Type 3** rather than 10, so the rule was not restricted by logon type. Correlating with RDP-specific logs would confirm the protocol.
+- The rule counts failures per source IP and account, so password spraying (one password against many accounts) would not reach the threshold.
+- The detection is scoped to a single host (`Win-Serv-22`) and the lab threshold of five failures.
 
 ## Skills Practised
 
